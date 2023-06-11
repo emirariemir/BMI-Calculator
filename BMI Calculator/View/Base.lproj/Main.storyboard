@@ -102,6 +102,7 @@
                         <outlet property="heightSlider" destination="g9Y-oq-sKR" id="kd0-g4-8id"/>
                         <outlet property="weightLabel" destination="6z1-BR-RUr" id="PgW-Wf-w6a"/>
                         <outlet property="weightSlider" destination="WwN-2v-MHM" id="JhU-jl-yKC"/>
+                        <segue destination="FNK-ZM-OXD" kind="presentation" identifier="goResultView" id="sJQ-zp-m9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -113,7 +114,7 @@
             <objects>
                 <viewController id="FNK-ZM-OXD" customClass="ResultViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YP4-Gs-xw5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuF-Ot-fcK">
@@ -135,19 +136,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThX-Fb-dX6">
-                                <rect key="frame" x="25" y="783.5" width="364" height="48.5"/>
+                                <rect key="frame" x="25" y="739.5" width="364" height="48.5"/>
                                 <color key="tintColor" red="0.0078431372550000003" green="0.3294117647" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Go Back">
-                                            <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="30" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="filled" title="Go Back" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.0078431372550000003" green="0.3294117647" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="goBackPressed:" destination="FNK-ZM-OXD" eventType="touchUpInside" id="1YF-lR-dKL"/>
@@ -155,12 +151,12 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fK3-RU-nrS"/>
-                        <color key="backgroundColor" red="0.8980392157" green="0.48627450979999998" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="421-jm-qNY" firstAttribute="centerX" secondItem="YP4-Gs-xw5" secondAttribute="centerX" id="17r-zw-kKt"/>
                             <constraint firstItem="421-jm-qNY" firstAttribute="top" secondItem="BOC-YL-eKM" secondAttribute="bottom" constant="40" id="4mz-E8-qZc"/>
                             <constraint firstItem="ThX-Fb-dX6" firstAttribute="leading" secondItem="fK3-RU-nrS" secondAttribute="leading" constant="25" id="6nK-A1-sEL"/>
-                            <constraint firstItem="fK3-RU-nrS" firstAttribute="bottom" secondItem="ThX-Fb-dX6" secondAttribute="bottom" constant="30" id="7Ji-C5-rSo"/>
+                            <constraint firstItem="fK3-RU-nrS" firstAttribute="bottom" secondItem="ThX-Fb-dX6" secondAttribute="bottom" constant="50" id="7Ji-C5-rSo"/>
                             <constraint firstItem="BOC-YL-eKM" firstAttribute="top" secondItem="nuF-Ot-fcK" secondAttribute="bottom" constant="40" id="Gp9-dD-xzP"/>
                             <constraint firstItem="nuF-Ot-fcK" firstAttribute="top" secondItem="fK3-RU-nrS" secondAttribute="top" constant="75" id="LL6-z1-1hl"/>
                             <constraint firstItem="nuF-Ot-fcK" firstAttribute="centerX" secondItem="YP4-Gs-xw5" secondAttribute="centerX" id="Uoo-Kb-Isj"/>
