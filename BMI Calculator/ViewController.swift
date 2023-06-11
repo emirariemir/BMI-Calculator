@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     var bmiValue = "0.0"
     
+    var bmiObject: BMI?
+    
     var brain = CalculatorBrain()
 
     @IBOutlet weak var heightLabel: UILabel!
@@ -46,9 +48,13 @@ class ViewController: UIViewController {
             
             bmiValue = brain.getBmiValue(weight: weight, height: height)
             
+            bmiObject = brain.calculateBmi(weight: weight, height: height)
+            
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.bmiValue = bmiValue
-            
+            destinationVC.advice = bmiObject?.advice ?? "Couldn't load advice."
+            destinationVC.color = bmiObject?.color ?? UIColor.yellow
+        
         }
     }
 }
